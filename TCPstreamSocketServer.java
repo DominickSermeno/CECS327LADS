@@ -58,9 +58,25 @@ public class TCPstreamSocketServer
 		return 0;
 	}
 	//Steph
-	public int nextPrime()
-	{
-		return 0;
+	public int nextPrime(int prime){
+		boolean isPrime = false;
+
+	    int start = 2;
+
+	    while (!isPrime) {
+	    	prime += 1;
+	        int m = (int) Math.ceil(Math.sqrt(prime));
+
+	        isPrime = true;
+	        for (int i = start; i <= m; i++) {
+	            if (prime % i == 0) {
+	                isPrime = false;
+	                break;
+	            } 
+	        }
+	    }
+	    return prime;
+	
 	}
 } // end of server program 
 
